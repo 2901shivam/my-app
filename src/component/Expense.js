@@ -1,18 +1,29 @@
-import './Expense.css';
-
+import "./Expense.css";
+import ExpenseDetail from "./ExpenseDetail";
 function ExpenseItem(props) {
+  const month = props.Date.toLocaleString("en-US", { month: "long" });
 
-  
+  const day = props.Date.toLocaleString("en-US", { day: "2-digit" });
+
+  const year = props.Date.getFullYear();
+
+  //  const expenseDetails=props.expenseDetails.toLocaleString('en-US',{Category},{location},{Amount});
+
   return (
-    <div className='expense-item '>
+    <div className="expense-item ">
       <div>
-        <h2>{props.Date.toISOString()}</h2>
+        <div>{day}</div>
+        <div>{month}</div>
+        <div>{year}</div>
       </div>
-      <div className='expense-item__description'>
-        <h1>{props.Category}</h1>
-        <h1>{props.location}</h1>
-      <div className='expense-item__price '>{props.Amount}</div>
-      </div>
+      <>
+        
+        <ExpenseDetail
+          Category={props.Category}
+          location={props.location}
+          Amount={props.Amount}
+        />
+      </>
     </div>
   );
 }
