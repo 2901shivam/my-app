@@ -2,7 +2,7 @@ import logo from "./logo.svg";
 import "./App.css";
 import ExpenseItem from "./component/Expense";
 
-function App() {
+const App=()=> {
   const expense = [
     {
       Category: "Food",

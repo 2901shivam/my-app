@@ -1,6 +1,6 @@
 import "./Expense.css";
 import ExpenseDetail from "./ExpenseDetail";
-function ExpenseItem(props) {
+const ExpenseItem=(props)=> {
   const month = props.Date.toLocaleString("en-US", { month: "long" });
 
   const day = props.Date.toLocaleString("en-US", { day: "2-digit" });
