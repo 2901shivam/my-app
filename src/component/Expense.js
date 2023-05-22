@@ -9,6 +9,10 @@ const ExpenseItem=(props)=> {
 
   //  const expenseDetails=props.expenseDetails.toLocaleString('en-US',{Category},{location},{Amount});
 
+  const clickhandeler=()=>{
+    console.log("Clicked!!!!")
+  }
+
   return (
     <div className="expense-item ">
       <div>
@@ -24,6 +28,7 @@ const ExpenseItem=(props)=> {
           Amount={props.Amount}
         />
       </>
+      <button onClick={clickhandeler}>Delete Expense</button>
     </div>
   );
 }
