@@ -1,6 +1,9 @@
+import {useState} from 'react';
 import "./Expense.css";
 import ExpenseDetail from "./ExpenseDetail";
 const ExpenseItem=(props)=> {
+  const[category,setCategory]=useState(props.Category);
+
   const month = props.Date.toLocaleString("en-US", { month: "long" });
 
   const day = props.Date.toLocaleString("en-US", { day: "2-digit" });
@@ -9,8 +12,11 @@ const ExpenseItem=(props)=> {
 
   //  const expenseDetails=props.expenseDetails.toLocaleString('en-US',{Category},{location},{Amount});
 
+  
+
   const clickhandeler=()=>{
-    console.log("Clicked!!!!")
+    setCategory("fun");
+    console.log(category);
   }
 
   return (
@@ -23,7 +29,7 @@ const ExpenseItem=(props)=> {
       <>
         
         <ExpenseDetail
-          Category={props.Category}
+          Category={category}
           location={props.location}
           Amount={props.Amount}
         />
