@@ -1,6 +1,7 @@
 import {useState} from 'react';
 import "./Expense.css";
 import ExpenseDetail from "./ExpenseDetail";
+import Expenseform from './ExpenseForm';
 const ExpenseItem=(props)=> {
   const[category,setCategory]=useState(props.Category);
 
@@ -20,7 +21,10 @@ const ExpenseItem=(props)=> {
   }
 
   return (
+   
     <div className="expense-item ">
+    
+     
       <div>
         <div>{day}</div>
         <div>{month}</div>
@@ -36,6 +40,7 @@ const ExpenseItem=(props)=> {
       </>
       <button onClick={clickhandeler}>Delete Expense</button>
     </div>
+    
   );
 }
 export default ExpenseItem;

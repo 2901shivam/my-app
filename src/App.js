@@ -1,6 +1,7 @@
 import logo from "./logo.svg";
 import "./App.css";
 import ExpenseItem from "./component/Expense";
+import Expenseform from "./component/ExpenseForm";
 
 const App=()=> {
   const expense = [
@@ -35,7 +36,7 @@ const App=()=> {
   ];
   return (
     <div className="App">
-     
+        <> <Expenseform></Expenseform></>
         <ExpenseItem
           Category={expense[0].Category}
           location={expense[0].location}
