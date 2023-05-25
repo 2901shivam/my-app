@@ -18,9 +18,20 @@ const Expenseform=()=>{
     const amountcahnge=(event)=>{
        setAmount(event.target.value);
     }
+    const onsubmitHandler=(event)=>{
+        event.preventDefault();
 
+        const Expensedata={
+         Category:category,
+         location:location,
+         amount:amount,
+        }
+
+        console.log(Expensedata);
+
+    }
     return (
-    <form>
+    <form onSubmit={onsubmitHandler}>
         <div>
             <div>
                 <lable>Category</lable>
@@ -38,7 +49,7 @@ const Expenseform=()=>{
                 <label>Date</label>
                 <input type='date' min='2018-01-01' max='2023-01-01'></input>
             </div>
-            <button>Submit</button>
+            <button type='submit'>Add Expense</button>
         </div>
     </form>
 
