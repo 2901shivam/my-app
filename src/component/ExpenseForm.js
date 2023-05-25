@@ -1,11 +1,24 @@
+import { useState } from 'react';
 import React from 'react';
 
 const Expenseform=()=>{
+    const[category,setCategory]=useState('');
+    const[location,setLocation]=useState('');
+    const[amount,setAmount]=useState('');
 
     const categoryChange=(event)=>{
-        console.log(event.target.value);
+        setCategory(event.target.value);
 
     }
+
+    const loactionChange=(event)=>{
+        setLocation(event.target.value);
+    }
+
+    const amountcahnge=(event)=>{
+       setAmount(event.target.value);
+    }
+
     return (
     <form>
         <div>
@@ -15,11 +28,11 @@ const Expenseform=()=>{
             </div>
             <div>
                 <label>Location</label>
-                <input type='text'></input>
+                <input type='text' onChange={loactionChange}></input>
             </div>
             <div>
                 <lable>Amount</lable>
-                <input type='number'></input>
+                <input type='number' onChange={amountcahnge}></input>
             </div>
             <div>
                 <label>Date</label>
